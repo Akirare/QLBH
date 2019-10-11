@@ -26,6 +26,7 @@ namespace QLBH
         private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmDanhMucQuanLyBanHang frmKH = new FrmDanhMucQuanLyBanHang();
+            
             frmKH.Show();
         }
 
@@ -44,7 +45,15 @@ namespace QLBH
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmDanhMucSanPham frSP = new FrmDanhMucSanPham();
+            frSP.MdiParent = this;
             frSP.Show();
+        }
+
+        private void cấuHìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCauHinh frmCauHinh = new FrmCauHinh();
+            frmCauHinh.MdiParent = this;
+            frmCauHinh.Show();
         }
     }
 }
