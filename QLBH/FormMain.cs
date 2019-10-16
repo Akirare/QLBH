@@ -25,7 +25,7 @@ namespace QLBH
 
         private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmDanhMucQuanLyBanHang frmKH = new FrmDanhMucQuanLyBanHang();
+            FrmDanhMucKhachHang frmKH = new FrmDanhMucKhachHang();
             
             frmKH.Show();
         }
@@ -55,5 +55,7 @@ namespace QLBH
             frmCauHinh.MdiParent = this;
             frmCauHinh.Show();
         }
+
+       
     }
 }
