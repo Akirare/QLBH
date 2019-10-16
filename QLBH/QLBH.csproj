@@ -186,10 +186,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\DatabaseQuanLyBanHang.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\DatabaseQuanLyBanHang_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseQuanLyBanHang.mdf</DependentUpon>
     </Content>
   </ItemGroup>
