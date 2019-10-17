@@ -66,3 +66,8 @@ C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.csproj.GenerateResource.c
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.csproj.CoreCompileInputs.cache
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.exe
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.pdb
+C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.Designer.cs
+C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xsc
+C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xsd
+C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xss
+C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
