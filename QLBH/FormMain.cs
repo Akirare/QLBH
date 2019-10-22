@@ -39,6 +39,7 @@ namespace QLBH
         private void đặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmDatHang frDH = new FrmDatHang();
+           
             frDH.Show();
         }
 

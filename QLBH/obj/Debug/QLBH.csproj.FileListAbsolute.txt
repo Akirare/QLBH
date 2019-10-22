@@ -19,7 +19,6 @@ H:\SourceVisual\QLBH\QLBH\bin\Debug\Data\DatabaseQuanLyBanHang_log.ldf
 H:\SourceVisual\QLBH\QLBH\bin\Debug\QLBH.exe.config
 H:\SourceVisual\QLBH\QLBH\bin\Debug\QLBH.exe
 H:\SourceVisual\QLBH\QLBH\bin\Debug\QLBH.pdb
-H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
 H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.FormLogin.resources
 H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.FormMain.resources
 H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.Functions.FrmDanhMucNhanVien.resources
@@ -71,3 +70,7 @@ C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.x
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xsd
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xss
 C:\Users\STUDENT\Source\Repos\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
+H:\SourceVisual\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.Designer.cs
+H:\SourceVisual\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xsc
+H:\SourceVisual\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xsd
+H:\SourceVisual\QLBH\QLBH\bin\Debug\DatabaseQuanLyBanHangDataSet.xss
