@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QLBH",
+    "\\QLBH\\Data",
+    "\\QLBH\\obj",
+    "\\QLBH\\Properties"
   ],
   "SelectedNode": "\\QLBHANG.sln",
   "PreviewInSolutionExplorer": false

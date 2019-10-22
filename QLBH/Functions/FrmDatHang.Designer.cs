@@ -53,6 +53,7 @@
             System.Windows.Forms.Label order_dateLabel1;
             System.Windows.Forms.Label label1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNV = new System.Windows.Forms.ComboBox();
             this.order_statusTextBox = new System.Windows.Forms.TextBox();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseQuanLyBanHangDataSet = new QLBH.DatabaseQuanLyBanHangDataSet();
@@ -69,7 +70,6 @@
             this.shipped_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.order_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.customer_idTextBox = new System.Windows.Forms.TextBox();
-            this.employee_idTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.order_detailsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +96,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDS = new System.Windows.Forms.Button();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,7 +114,6 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             employee_idLabel = new System.Windows.Forms.Label();
@@ -358,6 +358,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbNV);
             this.groupBox1.Controls.Add(order_statusLabel);
             this.groupBox1.Controls.Add(this.order_statusTextBox);
             this.groupBox1.Controls.Add(paid_dateLabel);
@@ -387,13 +388,20 @@
             this.groupBox1.Controls.Add(customer_idLabel);
             this.groupBox1.Controls.Add(this.customer_idTextBox);
             this.groupBox1.Controls.Add(employee_idLabel);
-            this.groupBox1.Controls.Add(this.employee_idTextBox);
             this.groupBox1.Location = new System.Drawing.Point(413, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(846, 192);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
+            // 
+            // cbbNV
+            // 
+            this.cbbNV.FormattingEnabled = true;
+            this.cbbNV.Location = new System.Drawing.Point(78, 13);
+            this.cbbNV.Name = "cbbNV";
+            this.cbbNV.Size = new System.Drawing.Size(121, 21);
+            this.cbbNV.TabIndex = 30;
             // 
             // order_statusTextBox
             // 
@@ -516,14 +524,6 @@
             this.customer_idTextBox.Name = "customer_idTextBox";
             this.customer_idTextBox.Size = new System.Drawing.Size(100, 20);
             this.customer_idTextBox.TabIndex = 3;
-            // 
-            // employee_idTextBox
-            // 
-            this.employee_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "employee_id", true));
-            this.employee_idTextBox.Location = new System.Drawing.Point(78, 13);
-            this.employee_idTextBox.Name = "employee_idTextBox";
-            this.employee_idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.employee_idTextBox.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -698,6 +698,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -737,8 +738,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnDS);
             this.groupBox3.Controls.Add(this.dgvDonHang);
-            this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(label1);
             this.groupBox3.Controls.Add(this.dtpDenNgay);
             this.groupBox3.Controls.Add(order_dateLabel1);
@@ -749,6 +750,16 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách đơn hàng";
+            // 
+            // btnDS
+            // 
+            this.btnDS.Location = new System.Drawing.Point(25, 96);
+            this.btnDS.Name = "btnDS";
+            this.btnDS.Size = new System.Drawing.Size(297, 23);
+            this.btnDS.TabIndex = 6;
+            this.btnDS.Text = "Lấy danh sách đơn hàng";
+            this.btnDS.UseVisualStyleBackColor = true;
+            this.btnDS.Click += new System.EventHandler(this.btnDS_Click);
             // 
             // dgvDonHang
             // 
@@ -888,16 +899,6 @@
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.Visible = false;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(9, 81);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(345, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Lấy danh sách đơn hàng";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnDS_Click);
-            // 
             // dtpDenNgay
             // 
             this.dtpDenNgay.Location = new System.Drawing.Point(70, 55);
@@ -917,7 +918,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 596);
+            this.ClientSize = new System.Drawing.Size(1268, 596);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -957,7 +958,6 @@
         private System.Windows.Forms.DateTimePicker shipped_dateDateTimePicker;
         private System.Windows.Forms.DateTimePicker order_dateDateTimePicker;
         private System.Windows.Forms.TextBox customer_idTextBox;
-        private System.Windows.Forms.TextBox employee_idTextBox;
         private System.Windows.Forms.TextBox order_statusTextBox;
         private System.Windows.Forms.DateTimePicker paid_dateDateTimePicker;
         private System.Windows.Forms.TextBox payment_typeTextBox;
@@ -1009,8 +1009,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDSDH;
         private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.DateTimePicker dtpTuNgay;
+        private System.Windows.Forms.Button btnDS;
+        private System.Windows.Forms.ComboBox cbbNV;
     }
 }
