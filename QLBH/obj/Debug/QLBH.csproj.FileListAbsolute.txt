@@ -95,3 +95,6 @@ D:\A17081\QLBH\QLBH\obj\Debug\QLBH.csproj.GenerateResource.cache
 D:\A17081\QLBH\QLBH\obj\Debug\QLBH.csproj.CoreCompileInputs.cache
 D:\A17081\QLBH\QLBH\obj\Debug\QLBH.exe
 D:\A17081\QLBH\QLBH\obj\Debug\QLBH.pdb
+H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
+H:\SourceVisual\QLBH\QLBH\obj\Debug\RdlCompile.cache
+H:\SourceVisual\QLBH\QLBH\obj\Debug\RdlCompile.compiled

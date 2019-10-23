@@ -143,6 +143,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\ReportHoaDonBanHang.rdlc" />
     <None Include="DatabaseQuanLyBanHangDataSet.xsc">
       <DependentUpon>DatabaseQuanLyBanHangDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -24,15 +24,17 @@ namespace QLBH
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text == "abcd" && txtPassword.Text == "123456")
+            if(txtUser.Text == "admin" && txtPassword.Text == "123")
             {
-                MessageBox.Show("Hello!!!");
-                Application.Exit();
+                MessageBox.Show("Welcome!!!");
+                FormMain frmMain = new FormMain();
+                frmMain.Show();
             }
             else
             {
                 MessageBox.Show("Đăng nhập thất bại");
             }
         }
+     
     }
 }
