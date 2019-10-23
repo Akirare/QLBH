@@ -35,6 +35,10 @@ namespace QLBH
                 MessageBox.Show("Đăng nhập thất bại");
             }
         }
-     
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
