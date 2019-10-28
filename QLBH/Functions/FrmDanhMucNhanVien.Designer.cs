@@ -1,4 +1,6 @@
-﻿namespace QLBH.Functions
+﻿using QLBH;
+
+namespace QLBH.Functions
 {
     partial class FrmDanhMucNhanVien
     {
@@ -56,7 +58,6 @@
             this.avatarTextBox = new System.Windows.Forms.TextBox();
             this.job_titleTextBox = new System.Windows.Forms.TextBox();
             this.departmentTextBox = new System.Windows.Forms.TextBox();
-            this.manager_idTextBox = new System.Windows.Forms.TextBox();
             this.postal_codeTextBox = new System.Windows.Forms.TextBox();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.address1TextBox = new System.Windows.Forms.TextBox();
@@ -85,6 +86,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.manager_idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             last_nameLabel = new System.Windows.Forms.Label();
             first_nameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -103,7 +105,143 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manager_idNumericUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // last_nameLabel
+            // 
+            last_nameLabel.AutoSize = true;
+            last_nameLabel.Location = new System.Drawing.Point(12, 21);
+            last_nameLabel.Name = "last_nameLabel";
+            last_nameLabel.Size = new System.Drawing.Size(55, 13);
+            last_nameLabel.TabIndex = 1;
+            last_nameLabel.Text = "last name:";
+            // 
+            // first_nameLabel
+            // 
+            first_nameLabel.AutoSize = true;
+            first_nameLabel.Location = new System.Drawing.Point(12, 49);
+            first_nameLabel.Name = "first_nameLabel";
+            first_nameLabel.Size = new System.Drawing.Size(55, 13);
+            first_nameLabel.TabIndex = 2;
+            first_nameLabel.Text = "first name:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(33, 77);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(34, 13);
+            emailLabel.TabIndex = 4;
+            emailLabel.Text = "email:";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(12, 104);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(55, 13);
+            passwordLabel.TabIndex = 6;
+            passwordLabel.Text = "password:";
+            // 
+            // stateLabel
+            // 
+            stateLabel.AutoSize = true;
+            stateLabel.Location = new System.Drawing.Point(33, 131);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new System.Drawing.Size(33, 13);
+            stateLabel.TabIndex = 8;
+            stateLabel.Text = "state:";
+            // 
+            // avatarLabel
+            // 
+            avatarLabel.AutoSize = true;
+            avatarLabel.Location = new System.Drawing.Point(207, 21);
+            avatarLabel.Name = "avatarLabel";
+            avatarLabel.Size = new System.Drawing.Size(40, 13);
+            avatarLabel.TabIndex = 10;
+            avatarLabel.Text = "avatar:";
+            // 
+            // job_titleLabel
+            // 
+            job_titleLabel.AutoSize = true;
+            job_titleLabel.Location = new System.Drawing.Point(204, 49);
+            job_titleLabel.Name = "job_titleLabel";
+            job_titleLabel.Size = new System.Drawing.Size(43, 13);
+            job_titleLabel.TabIndex = 12;
+            job_titleLabel.Text = "job title:";
+            // 
+            // departmentLabel
+            // 
+            departmentLabel.AutoSize = true;
+            departmentLabel.Location = new System.Drawing.Point(184, 77);
+            departmentLabel.Name = "departmentLabel";
+            departmentLabel.Size = new System.Drawing.Size(63, 13);
+            departmentLabel.TabIndex = 14;
+            departmentLabel.Text = "department:";
+            // 
+            // manager_idLabel
+            // 
+            manager_idLabel.AutoSize = true;
+            manager_idLabel.Location = new System.Drawing.Point(184, 104);
+            manager_idLabel.Name = "manager_idLabel";
+            manager_idLabel.Size = new System.Drawing.Size(62, 13);
+            manager_idLabel.TabIndex = 16;
+            manager_idLabel.Text = "manager id:";
+            // 
+            // postal_codeLabel
+            // 
+            postal_codeLabel.AutoSize = true;
+            postal_codeLabel.Location = new System.Drawing.Point(181, 131);
+            postal_codeLabel.Name = "postal_codeLabel";
+            postal_codeLabel.Size = new System.Drawing.Size(65, 13);
+            postal_codeLabel.TabIndex = 18;
+            postal_codeLabel.Text = "postal code:";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new System.Drawing.Point(386, 21);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(40, 13);
+            phoneLabel.TabIndex = 20;
+            phoneLabel.Text = "phone:";
+            // 
+            // address1Label
+            // 
+            address1Label.AutoSize = true;
+            address1Label.Location = new System.Drawing.Point(373, 49);
+            address1Label.Name = "address1Label";
+            address1Label.Size = new System.Drawing.Size(53, 13);
+            address1Label.TabIndex = 22;
+            address1Label.Text = "address1:";
+            // 
+            // address2Label
+            // 
+            address2Label.AutoSize = true;
+            address2Label.Location = new System.Drawing.Point(373, 77);
+            address2Label.Name = "address2Label";
+            address2Label.Size = new System.Drawing.Size(53, 13);
+            address2Label.TabIndex = 24;
+            address2Label.Text = "address2:";
+            // 
+            // cityLabel
+            // 
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new System.Drawing.Point(400, 104);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new System.Drawing.Size(26, 13);
+            cityLabel.TabIndex = 26;
+            cityLabel.Text = "city:";
+            // 
+            // countryLabel
+            // 
+            countryLabel.AutoSize = true;
+            countryLabel.Location = new System.Drawing.Point(381, 131);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new System.Drawing.Size(45, 13);
+            countryLabel.TabIndex = 28;
+            countryLabel.Text = "country:";
             // 
             // databaseQuanLyBanHangDataSet
             // 
@@ -130,15 +268,6 @@
             this.tableAdapterManager.productsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // last_nameLabel
-            // 
-            last_nameLabel.AutoSize = true;
-            last_nameLabel.Location = new System.Drawing.Point(12, 21);
-            last_nameLabel.Name = "last_nameLabel";
-            last_nameLabel.Size = new System.Drawing.Size(55, 13);
-            last_nameLabel.TabIndex = 1;
-            last_nameLabel.Text = "last name:";
-            // 
             // last_nameTextBox
             // 
             this.last_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "last_name", true));
@@ -146,15 +275,6 @@
             this.last_nameTextBox.Name = "last_nameTextBox";
             this.last_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.last_nameTextBox.TabIndex = 2;
-            // 
-            // first_nameLabel
-            // 
-            first_nameLabel.AutoSize = true;
-            first_nameLabel.Location = new System.Drawing.Point(12, 49);
-            first_nameLabel.Name = "first_nameLabel";
-            first_nameLabel.Size = new System.Drawing.Size(55, 13);
-            first_nameLabel.TabIndex = 2;
-            first_nameLabel.Text = "first name:";
             // 
             // first_nameTextBox
             // 
@@ -164,15 +284,6 @@
             this.first_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.first_nameTextBox.TabIndex = 3;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(33, 77);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(34, 13);
-            emailLabel.TabIndex = 4;
-            emailLabel.Text = "email:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "email", true));
@@ -180,15 +291,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(100, 20);
             this.emailTextBox.TabIndex = 5;
-            // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(12, 104);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(55, 13);
-            passwordLabel.TabIndex = 6;
-            passwordLabel.Text = "password:";
             // 
             // passwordTextBox
             // 
@@ -198,15 +300,6 @@
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 7;
             // 
-            // stateLabel
-            // 
-            stateLabel.AutoSize = true;
-            stateLabel.Location = new System.Drawing.Point(33, 131);
-            stateLabel.Name = "stateLabel";
-            stateLabel.Size = new System.Drawing.Size(33, 13);
-            stateLabel.TabIndex = 8;
-            stateLabel.Text = "state:";
-            // 
             // stateTextBox
             // 
             this.stateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "state", true));
@@ -214,15 +307,6 @@
             this.stateTextBox.Name = "stateTextBox";
             this.stateTextBox.Size = new System.Drawing.Size(100, 20);
             this.stateTextBox.TabIndex = 9;
-            // 
-            // avatarLabel
-            // 
-            avatarLabel.AutoSize = true;
-            avatarLabel.Location = new System.Drawing.Point(207, 21);
-            avatarLabel.Name = "avatarLabel";
-            avatarLabel.Size = new System.Drawing.Size(40, 13);
-            avatarLabel.TabIndex = 10;
-            avatarLabel.Text = "avatar:";
             // 
             // avatarTextBox
             // 
@@ -232,15 +316,6 @@
             this.avatarTextBox.Size = new System.Drawing.Size(100, 20);
             this.avatarTextBox.TabIndex = 11;
             // 
-            // job_titleLabel
-            // 
-            job_titleLabel.AutoSize = true;
-            job_titleLabel.Location = new System.Drawing.Point(204, 49);
-            job_titleLabel.Name = "job_titleLabel";
-            job_titleLabel.Size = new System.Drawing.Size(43, 13);
-            job_titleLabel.TabIndex = 12;
-            job_titleLabel.Text = "job title:";
-            // 
             // job_titleTextBox
             // 
             this.job_titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "job_title", true));
@@ -248,15 +323,6 @@
             this.job_titleTextBox.Name = "job_titleTextBox";
             this.job_titleTextBox.Size = new System.Drawing.Size(100, 20);
             this.job_titleTextBox.TabIndex = 13;
-            // 
-            // departmentLabel
-            // 
-            departmentLabel.AutoSize = true;
-            departmentLabel.Location = new System.Drawing.Point(184, 77);
-            departmentLabel.Name = "departmentLabel";
-            departmentLabel.Size = new System.Drawing.Size(63, 13);
-            departmentLabel.TabIndex = 14;
-            departmentLabel.Text = "department:";
             // 
             // departmentTextBox
             // 
@@ -266,32 +332,6 @@
             this.departmentTextBox.Size = new System.Drawing.Size(100, 20);
             this.departmentTextBox.TabIndex = 15;
             // 
-            // manager_idLabel
-            // 
-            manager_idLabel.AutoSize = true;
-            manager_idLabel.Location = new System.Drawing.Point(184, 104);
-            manager_idLabel.Name = "manager_idLabel";
-            manager_idLabel.Size = new System.Drawing.Size(62, 13);
-            manager_idLabel.TabIndex = 16;
-            manager_idLabel.Text = "manager id:";
-            // 
-            // manager_idTextBox
-            // 
-            this.manager_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "manager_id", true));
-            this.manager_idTextBox.Location = new System.Drawing.Point(252, 101);
-            this.manager_idTextBox.Name = "manager_idTextBox";
-            this.manager_idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.manager_idTextBox.TabIndex = 17;
-            // 
-            // postal_codeLabel
-            // 
-            postal_codeLabel.AutoSize = true;
-            postal_codeLabel.Location = new System.Drawing.Point(181, 131);
-            postal_codeLabel.Name = "postal_codeLabel";
-            postal_codeLabel.Size = new System.Drawing.Size(65, 13);
-            postal_codeLabel.TabIndex = 18;
-            postal_codeLabel.Text = "postal code:";
-            // 
             // postal_codeTextBox
             // 
             this.postal_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "postal_code", true));
@@ -299,15 +339,6 @@
             this.postal_codeTextBox.Name = "postal_codeTextBox";
             this.postal_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.postal_codeTextBox.TabIndex = 19;
-            // 
-            // phoneLabel
-            // 
-            phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(386, 21);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(40, 13);
-            phoneLabel.TabIndex = 20;
-            phoneLabel.Text = "phone:";
             // 
             // phoneTextBox
             // 
@@ -317,15 +348,6 @@
             this.phoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.phoneTextBox.TabIndex = 21;
             // 
-            // address1Label
-            // 
-            address1Label.AutoSize = true;
-            address1Label.Location = new System.Drawing.Point(373, 49);
-            address1Label.Name = "address1Label";
-            address1Label.Size = new System.Drawing.Size(53, 13);
-            address1Label.TabIndex = 22;
-            address1Label.Text = "address1:";
-            // 
             // address1TextBox
             // 
             this.address1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "address1", true));
@@ -333,15 +355,6 @@
             this.address1TextBox.Name = "address1TextBox";
             this.address1TextBox.Size = new System.Drawing.Size(100, 20);
             this.address1TextBox.TabIndex = 23;
-            // 
-            // address2Label
-            // 
-            address2Label.AutoSize = true;
-            address2Label.Location = new System.Drawing.Point(373, 77);
-            address2Label.Name = "address2Label";
-            address2Label.Size = new System.Drawing.Size(53, 13);
-            address2Label.TabIndex = 24;
-            address2Label.Text = "address2:";
             // 
             // address2TextBox
             // 
@@ -351,15 +364,6 @@
             this.address2TextBox.Size = new System.Drawing.Size(100, 20);
             this.address2TextBox.TabIndex = 25;
             // 
-            // cityLabel
-            // 
-            cityLabel.AutoSize = true;
-            cityLabel.Location = new System.Drawing.Point(400, 104);
-            cityLabel.Name = "cityLabel";
-            cityLabel.Size = new System.Drawing.Size(26, 13);
-            cityLabel.TabIndex = 26;
-            cityLabel.Text = "city:";
-            // 
             // cityTextBox
             // 
             this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "city", true));
@@ -367,15 +371,6 @@
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(100, 20);
             this.cityTextBox.TabIndex = 27;
-            // 
-            // countryLabel
-            // 
-            countryLabel.AutoSize = true;
-            countryLabel.Location = new System.Drawing.Point(381, 131);
-            countryLabel.Name = "countryLabel";
-            countryLabel.Size = new System.Drawing.Size(45, 13);
-            countryLabel.TabIndex = 28;
-            countryLabel.Text = "country:";
             // 
             // countryTextBox
             // 
@@ -554,11 +549,19 @@
             this.button5.Text = "Thêm";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // manager_idNumericUpDown
+            // 
+            this.manager_idNumericUpDown.Location = new System.Drawing.Point(253, 101);
+            this.manager_idNumericUpDown.Name = "manager_idNumericUpDown";
+            this.manager_idNumericUpDown.Size = new System.Drawing.Size(101, 20);
+            this.manager_idNumericUpDown.TabIndex = 32;
+            // 
             // FrmDanhMucNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 418);
+            this.Controls.Add(this.manager_idNumericUpDown);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -578,7 +581,6 @@
             this.Controls.Add(postal_codeLabel);
             this.Controls.Add(this.postal_codeTextBox);
             this.Controls.Add(manager_idLabel);
-            this.Controls.Add(this.manager_idTextBox);
             this.Controls.Add(departmentLabel);
             this.Controls.Add(this.departmentTextBox);
             this.Controls.Add(job_titleLabel);
@@ -601,6 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manager_idNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,8 +613,8 @@
 
         private DatabaseQuanLyBanHangDataSet databaseQuanLyBanHangDataSet;
         private System.Windows.Forms.BindingSource employeesBindingSource;
-        private DatabaseQuanLyBanHangDataSetTableAdapters.employeesTableAdapter employeesTableAdapter;
-        private DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.employeesTableAdapter employeesTableAdapter;
+        private QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox last_nameTextBox;
         private System.Windows.Forms.TextBox first_nameTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
@@ -620,7 +623,6 @@
         private System.Windows.Forms.TextBox avatarTextBox;
         private System.Windows.Forms.TextBox job_titleTextBox;
         private System.Windows.Forms.TextBox departmentTextBox;
-        private System.Windows.Forms.TextBox manager_idTextBox;
         private System.Windows.Forms.TextBox postal_codeTextBox;
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.TextBox address1TextBox;
@@ -649,5 +651,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.NumericUpDown manager_idNumericUpDown;
     }
 }

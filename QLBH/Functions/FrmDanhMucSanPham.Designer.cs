@@ -1,4 +1,6 @@
-﻿namespace QLBH.Functions
+﻿using QLBH;
+
+namespace QLBH.Functions
 {
     partial class FrmDanhMucSanPham
     {
@@ -49,30 +51,30 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.standard_costTextBox = new System.Windows.Forms.TextBox();
             this.list_priceTextBox = new System.Windows.Forms.TextBox();
-            this.target_levelTextBox = new System.Windows.Forms.TextBox();
-            this.reorder_levelTextBox = new System.Windows.Forms.TextBox();
-            this.minimum_reorder_quantityTextBox = new System.Windows.Forms.TextBox();
             this.quantity_per_unitTextBox = new System.Windows.Forms.TextBox();
             this.discontinuedTextBox = new System.Windows.Forms.TextBox();
             this.categoryTextBox = new System.Windows.Forms.TextBox();
-            this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.dgvSanPham = new System.Windows.Forms.DataGridView();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.reorder_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.minimum_reorder_quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.target_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.standardcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.targetlevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reorderlevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minimumreorderquantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityperunitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discontinuedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             product_codeLabel = new System.Windows.Forms.Label();
             product_nameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -86,8 +88,110 @@
             categoryLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reorder_levelNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimum_reorder_quantityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target_levelNumericUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // product_codeLabel
+            // 
+            product_codeLabel.AutoSize = true;
+            product_codeLabel.Location = new System.Drawing.Point(12, 9);
+            product_codeLabel.Name = "product_codeLabel";
+            product_codeLabel.Size = new System.Drawing.Size(73, 13);
+            product_codeLabel.TabIndex = 1;
+            product_codeLabel.Text = "product code:";
+            // 
+            // product_nameLabel
+            // 
+            product_nameLabel.AutoSize = true;
+            product_nameLabel.Location = new System.Drawing.Point(10, 37);
+            product_nameLabel.Name = "product_nameLabel";
+            product_nameLabel.Size = new System.Drawing.Size(75, 13);
+            product_nameLabel.TabIndex = 2;
+            product_nameLabel.Text = "product name:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(24, 65);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(61, 13);
+            descriptionLabel.TabIndex = 4;
+            descriptionLabel.Text = "description:";
+            // 
+            // standard_costLabel
+            // 
+            standard_costLabel.AutoSize = true;
+            standard_costLabel.Location = new System.Drawing.Point(11, 91);
+            standard_costLabel.Name = "standard_costLabel";
+            standard_costLabel.Size = new System.Drawing.Size(74, 13);
+            standard_costLabel.TabIndex = 6;
+            standard_costLabel.Text = "standard cost:";
+            // 
+            // list_priceLabel
+            // 
+            list_priceLabel.AutoSize = true;
+            list_priceLabel.Location = new System.Drawing.Point(211, 9);
+            list_priceLabel.Name = "list_priceLabel";
+            list_priceLabel.Size = new System.Drawing.Size(48, 13);
+            list_priceLabel.TabIndex = 8;
+            list_priceLabel.Text = "list price:";
+            // 
+            // target_levelLabel
+            // 
+            target_levelLabel.AutoSize = true;
+            target_levelLabel.Location = new System.Drawing.Point(197, 37);
+            target_levelLabel.Name = "target_levelLabel";
+            target_levelLabel.Size = new System.Drawing.Size(62, 13);
+            target_levelLabel.TabIndex = 10;
+            target_levelLabel.Text = "target level:";
+            // 
+            // reorder_levelLabel
+            // 
+            reorder_levelLabel.AutoSize = true;
+            reorder_levelLabel.Location = new System.Drawing.Point(197, 62);
+            reorder_levelLabel.Name = "reorder_levelLabel";
+            reorder_levelLabel.Size = new System.Drawing.Size(68, 13);
+            reorder_levelLabel.TabIndex = 12;
+            reorder_levelLabel.Text = "reorder level:";
+            // 
+            // minimum_reorder_quantityLabel
+            // 
+            minimum_reorder_quantityLabel.AutoSize = true;
+            minimum_reorder_quantityLabel.Location = new System.Drawing.Point(197, 91);
+            minimum_reorder_quantityLabel.Name = "minimum_reorder_quantityLabel";
+            minimum_reorder_quantityLabel.Size = new System.Drawing.Size(126, 13);
+            minimum_reorder_quantityLabel.TabIndex = 14;
+            minimum_reorder_quantityLabel.Text = "minimum reorder quantity:";
+            // 
+            // quantity_per_unitLabel
+            // 
+            quantity_per_unitLabel.AutoSize = true;
+            quantity_per_unitLabel.Location = new System.Drawing.Point(441, 9);
+            quantity_per_unitLabel.Name = "quantity_per_unitLabel";
+            quantity_per_unitLabel.Size = new System.Drawing.Size(85, 13);
+            quantity_per_unitLabel.TabIndex = 16;
+            quantity_per_unitLabel.Text = "quantity per unit:";
+            // 
+            // discontinuedLabel
+            // 
+            discontinuedLabel.AutoSize = true;
+            discontinuedLabel.Location = new System.Drawing.Point(456, 37);
+            discontinuedLabel.Name = "discontinuedLabel";
+            discontinuedLabel.Size = new System.Drawing.Size(70, 13);
+            discontinuedLabel.TabIndex = 18;
+            discontinuedLabel.Text = "discontinued:";
+            // 
+            // categoryLabel
+            // 
+            categoryLabel.AutoSize = true;
+            categoryLabel.Location = new System.Drawing.Point(475, 65);
+            categoryLabel.Name = "categoryLabel";
+            categoryLabel.Size = new System.Drawing.Size(51, 13);
+            categoryLabel.TabIndex = 20;
+            categoryLabel.Text = "category:";
             // 
             // databaseQuanLyBanHangDataSet
             // 
@@ -114,15 +218,6 @@
             this.tableAdapterManager.productsTableAdapter = this.productsTableAdapter;
             this.tableAdapterManager.UpdateOrder = QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // product_codeLabel
-            // 
-            product_codeLabel.AutoSize = true;
-            product_codeLabel.Location = new System.Drawing.Point(12, 9);
-            product_codeLabel.Name = "product_codeLabel";
-            product_codeLabel.Size = new System.Drawing.Size(73, 13);
-            product_codeLabel.TabIndex = 1;
-            product_codeLabel.Text = "product code:";
-            // 
             // product_codeTextBox
             // 
             this.product_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "product_code", true));
@@ -130,15 +225,6 @@
             this.product_codeTextBox.Name = "product_codeTextBox";
             this.product_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.product_codeTextBox.TabIndex = 2;
-            // 
-            // product_nameLabel
-            // 
-            product_nameLabel.AutoSize = true;
-            product_nameLabel.Location = new System.Drawing.Point(10, 37);
-            product_nameLabel.Name = "product_nameLabel";
-            product_nameLabel.Size = new System.Drawing.Size(75, 13);
-            product_nameLabel.TabIndex = 2;
-            product_nameLabel.Text = "product name:";
             // 
             // product_nameTextBox
             // 
@@ -148,15 +234,6 @@
             this.product_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.product_nameTextBox.TabIndex = 3;
             // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(24, 65);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(61, 13);
-            descriptionLabel.TabIndex = 4;
-            descriptionLabel.Text = "description:";
-            // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "description", true));
@@ -164,15 +241,6 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
             this.descriptionTextBox.TabIndex = 5;
-            // 
-            // standard_costLabel
-            // 
-            standard_costLabel.AutoSize = true;
-            standard_costLabel.Location = new System.Drawing.Point(11, 91);
-            standard_costLabel.Name = "standard_costLabel";
-            standard_costLabel.Size = new System.Drawing.Size(74, 13);
-            standard_costLabel.TabIndex = 6;
-            standard_costLabel.Text = "standard cost:";
             // 
             // standard_costTextBox
             // 
@@ -182,15 +250,6 @@
             this.standard_costTextBox.Size = new System.Drawing.Size(100, 20);
             this.standard_costTextBox.TabIndex = 7;
             // 
-            // list_priceLabel
-            // 
-            list_priceLabel.AutoSize = true;
-            list_priceLabel.Location = new System.Drawing.Point(211, 9);
-            list_priceLabel.Name = "list_priceLabel";
-            list_priceLabel.Size = new System.Drawing.Size(48, 13);
-            list_priceLabel.TabIndex = 8;
-            list_priceLabel.Text = "list price:";
-            // 
             // list_priceTextBox
             // 
             this.list_priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "list_price", true));
@@ -198,66 +257,6 @@
             this.list_priceTextBox.Name = "list_priceTextBox";
             this.list_priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.list_priceTextBox.TabIndex = 9;
-            // 
-            // target_levelLabel
-            // 
-            target_levelLabel.AutoSize = true;
-            target_levelLabel.Location = new System.Drawing.Point(197, 37);
-            target_levelLabel.Name = "target_levelLabel";
-            target_levelLabel.Size = new System.Drawing.Size(62, 13);
-            target_levelLabel.TabIndex = 10;
-            target_levelLabel.Text = "target level:";
-            // 
-            // target_levelTextBox
-            // 
-            this.target_levelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "target_level", true));
-            this.target_levelTextBox.Location = new System.Drawing.Point(271, 34);
-            this.target_levelTextBox.Name = "target_levelTextBox";
-            this.target_levelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.target_levelTextBox.TabIndex = 11;
-            // 
-            // reorder_levelLabel
-            // 
-            reorder_levelLabel.AutoSize = true;
-            reorder_levelLabel.Location = new System.Drawing.Point(197, 62);
-            reorder_levelLabel.Name = "reorder_levelLabel";
-            reorder_levelLabel.Size = new System.Drawing.Size(68, 13);
-            reorder_levelLabel.TabIndex = 12;
-            reorder_levelLabel.Text = "reorder level:";
-            // 
-            // reorder_levelTextBox
-            // 
-            this.reorder_levelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "reorder_level", true));
-            this.reorder_levelTextBox.Location = new System.Drawing.Point(271, 62);
-            this.reorder_levelTextBox.Name = "reorder_levelTextBox";
-            this.reorder_levelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.reorder_levelTextBox.TabIndex = 13;
-            // 
-            // minimum_reorder_quantityLabel
-            // 
-            minimum_reorder_quantityLabel.AutoSize = true;
-            minimum_reorder_quantityLabel.Location = new System.Drawing.Point(197, 91);
-            minimum_reorder_quantityLabel.Name = "minimum_reorder_quantityLabel";
-            minimum_reorder_quantityLabel.Size = new System.Drawing.Size(126, 13);
-            minimum_reorder_quantityLabel.TabIndex = 14;
-            minimum_reorder_quantityLabel.Text = "minimum reorder quantity:";
-            // 
-            // minimum_reorder_quantityTextBox
-            // 
-            this.minimum_reorder_quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "minimum_reorder_quantity", true));
-            this.minimum_reorder_quantityTextBox.Location = new System.Drawing.Point(329, 88);
-            this.minimum_reorder_quantityTextBox.Name = "minimum_reorder_quantityTextBox";
-            this.minimum_reorder_quantityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.minimum_reorder_quantityTextBox.TabIndex = 15;
-            // 
-            // quantity_per_unitLabel
-            // 
-            quantity_per_unitLabel.AutoSize = true;
-            quantity_per_unitLabel.Location = new System.Drawing.Point(441, 9);
-            quantity_per_unitLabel.Name = "quantity_per_unitLabel";
-            quantity_per_unitLabel.Size = new System.Drawing.Size(85, 13);
-            quantity_per_unitLabel.TabIndex = 16;
-            quantity_per_unitLabel.Text = "quantity per unit:";
             // 
             // quantity_per_unitTextBox
             // 
@@ -267,15 +266,6 @@
             this.quantity_per_unitTextBox.Size = new System.Drawing.Size(100, 20);
             this.quantity_per_unitTextBox.TabIndex = 17;
             // 
-            // discontinuedLabel
-            // 
-            discontinuedLabel.AutoSize = true;
-            discontinuedLabel.Location = new System.Drawing.Point(456, 37);
-            discontinuedLabel.Name = "discontinuedLabel";
-            discontinuedLabel.Size = new System.Drawing.Size(70, 13);
-            discontinuedLabel.TabIndex = 18;
-            discontinuedLabel.Text = "discontinued:";
-            // 
             // discontinuedTextBox
             // 
             this.discontinuedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "discontinued", true));
@@ -283,15 +273,6 @@
             this.discontinuedTextBox.Name = "discontinuedTextBox";
             this.discontinuedTextBox.Size = new System.Drawing.Size(100, 20);
             this.discontinuedTextBox.TabIndex = 19;
-            // 
-            // categoryLabel
-            // 
-            categoryLabel.AutoSize = true;
-            categoryLabel.Location = new System.Drawing.Point(475, 65);
-            categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new System.Drawing.Size(51, 13);
-            categoryLabel.TabIndex = 20;
-            categoryLabel.Text = "category:";
             // 
             // categoryTextBox
             // 
@@ -301,158 +282,183 @@
             this.categoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.categoryTextBox.TabIndex = 21;
             // 
-            // productsDataGridView
+            // dgvSanPham
             // 
-            this.productsDataGridView.AutoGenerateColumns = false;
-            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(15, 124);
-            this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(641, 220);
-            this.productsDataGridView.TabIndex = 22;
+            this.dgvSanPham.AutoGenerateColumns = false;
+            this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.productcodeDataGridViewTextBoxColumn,
+            this.productnameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.standardcostDataGridViewTextBoxColumn,
+            this.listpriceDataGridViewTextBoxColumn,
+            this.targetlevelDataGridViewTextBoxColumn,
+            this.reorderlevelDataGridViewTextBoxColumn,
+            this.minimumreorderquantityDataGridViewTextBoxColumn,
+            this.quantityperunitDataGridViewTextBoxColumn,
+            this.discontinuedDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn});
+            this.dgvSanPham.DataSource = this.productsBindingSource;
+            this.dgvSanPham.Location = new System.Drawing.Point(15, 124);
+            this.dgvSanPham.Name = "dgvSanPham";
+            this.dgvSanPham.Size = new System.Drawing.Size(641, 220);
+            this.dgvSanPham.TabIndex = 22;
+            this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // btnThoat
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.btnThoat.Location = new System.Drawing.Point(581, 357);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 23;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // btnLuu
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "product_code";
-            this.dataGridViewTextBoxColumn2.HeaderText = "product_code";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.btnLuu.Location = new System.Drawing.Point(500, 357);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 23;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // btnXoa
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "product_name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "product_name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.btnXoa.Location = new System.Drawing.Point(419, 357);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // btnSua
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn4.HeaderText = "description";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.btnSua.Location = new System.Drawing.Point(338, 357);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 23;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // btnThem
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "standard_cost";
-            this.dataGridViewTextBoxColumn5.HeaderText = "standard_cost";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.btnThem.Location = new System.Drawing.Point(257, 357);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 23;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // reorder_levelNumericUpDown
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "list_price";
-            this.dataGridViewTextBoxColumn6.HeaderText = "list_price";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.reorder_levelNumericUpDown.Location = new System.Drawing.Point(271, 60);
+            this.reorder_levelNumericUpDown.Name = "reorder_levelNumericUpDown";
+            this.reorder_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.reorder_levelNumericUpDown.TabIndex = 24;
             // 
-            // dataGridViewTextBoxColumn7
+            // minimum_reorder_quantityNumericUpDown
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "target_level";
-            this.dataGridViewTextBoxColumn7.HeaderText = "target_level";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.minimum_reorder_quantityNumericUpDown.Location = new System.Drawing.Point(329, 89);
+            this.minimum_reorder_quantityNumericUpDown.Name = "minimum_reorder_quantityNumericUpDown";
+            this.minimum_reorder_quantityNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.minimum_reorder_quantityNumericUpDown.TabIndex = 24;
             // 
-            // dataGridViewTextBoxColumn8
+            // target_levelNumericUpDown
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "reorder_level";
-            this.dataGridViewTextBoxColumn8.HeaderText = "reorder_level";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.target_levelNumericUpDown.Location = new System.Drawing.Point(271, 34);
+            this.target_levelNumericUpDown.Name = "target_levelNumericUpDown";
+            this.target_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.target_levelNumericUpDown.TabIndex = 24;
             // 
-            // dataGridViewTextBoxColumn9
+            // idDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "minimum_reorder_quantity";
-            this.dataGridViewTextBoxColumn9.HeaderText = "minimum_reorder_quantity";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // productcodeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "quantity_per_unit";
-            this.dataGridViewTextBoxColumn10.HeaderText = "quantity_per_unit";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.productcodeDataGridViewTextBoxColumn.DataPropertyName = "product_code";
+            this.productcodeDataGridViewTextBoxColumn.HeaderText = "product_code";
+            this.productcodeDataGridViewTextBoxColumn.Name = "productcodeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn11
+            // productnameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "discontinued";
-            this.dataGridViewTextBoxColumn11.HeaderText = "discontinued";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.productnameDataGridViewTextBoxColumn.DataPropertyName = "product_name";
+            this.productnameDataGridViewTextBoxColumn.HeaderText = "product_name";
+            this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn12
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "category";
-            this.dataGridViewTextBoxColumn12.HeaderText = "category";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
-            // button1
+            // standardcostDataGridViewTextBoxColumn
             // 
-            this.button1.Location = new System.Drawing.Point(581, 357);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = true;
+            this.standardcostDataGridViewTextBoxColumn.DataPropertyName = "standard_cost";
+            this.standardcostDataGridViewTextBoxColumn.HeaderText = "standard_cost";
+            this.standardcostDataGridViewTextBoxColumn.Name = "standardcostDataGridViewTextBoxColumn";
             // 
-            // button2
+            // listpriceDataGridViewTextBoxColumn
             // 
-            this.button2.Location = new System.Drawing.Point(500, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.listpriceDataGridViewTextBoxColumn.DataPropertyName = "list_price";
+            this.listpriceDataGridViewTextBoxColumn.HeaderText = "list_price";
+            this.listpriceDataGridViewTextBoxColumn.Name = "listpriceDataGridViewTextBoxColumn";
             // 
-            // button3
+            // targetlevelDataGridViewTextBoxColumn
             // 
-            this.button3.Location = new System.Drawing.Point(419, 357);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Xoá";
-            this.button3.UseVisualStyleBackColor = true;
+            this.targetlevelDataGridViewTextBoxColumn.DataPropertyName = "target_level";
+            this.targetlevelDataGridViewTextBoxColumn.HeaderText = "target_level";
+            this.targetlevelDataGridViewTextBoxColumn.Name = "targetlevelDataGridViewTextBoxColumn";
             // 
-            // button4
+            // reorderlevelDataGridViewTextBoxColumn
             // 
-            this.button4.Location = new System.Drawing.Point(338, 357);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Sửa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.reorderlevelDataGridViewTextBoxColumn.DataPropertyName = "reorder_level";
+            this.reorderlevelDataGridViewTextBoxColumn.HeaderText = "reorder_level";
+            this.reorderlevelDataGridViewTextBoxColumn.Name = "reorderlevelDataGridViewTextBoxColumn";
             // 
-            // button5
+            // minimumreorderquantityDataGridViewTextBoxColumn
             // 
-            this.button5.Location = new System.Drawing.Point(257, 357);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Thêm";
-            this.button5.UseVisualStyleBackColor = true;
+            this.minimumreorderquantityDataGridViewTextBoxColumn.DataPropertyName = "minimum_reorder_quantity";
+            this.minimumreorderquantityDataGridViewTextBoxColumn.HeaderText = "minimum_reorder_quantity";
+            this.minimumreorderquantityDataGridViewTextBoxColumn.Name = "minimumreorderquantityDataGridViewTextBoxColumn";
+            // 
+            // quantityperunitDataGridViewTextBoxColumn
+            // 
+            this.quantityperunitDataGridViewTextBoxColumn.DataPropertyName = "quantity_per_unit";
+            this.quantityperunitDataGridViewTextBoxColumn.HeaderText = "quantity_per_unit";
+            this.quantityperunitDataGridViewTextBoxColumn.Name = "quantityperunitDataGridViewTextBoxColumn";
+            // 
+            // discontinuedDataGridViewTextBoxColumn
+            // 
+            this.discontinuedDataGridViewTextBoxColumn.DataPropertyName = "discontinued";
+            this.discontinuedDataGridViewTextBoxColumn.HeaderText = "discontinued";
+            this.discontinuedDataGridViewTextBoxColumn.Name = "discontinuedDataGridViewTextBoxColumn";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
             // FrmDanhMucSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 383);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.productsDataGridView);
+            this.Controls.Add(this.minimum_reorder_quantityNumericUpDown);
+            this.Controls.Add(this.target_levelNumericUpDown);
+            this.Controls.Add(this.reorder_levelNumericUpDown);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.dgvSanPham);
             this.Controls.Add(categoryLabel);
             this.Controls.Add(this.categoryTextBox);
             this.Controls.Add(discontinuedLabel);
@@ -460,11 +466,8 @@
             this.Controls.Add(quantity_per_unitLabel);
             this.Controls.Add(this.quantity_per_unitTextBox);
             this.Controls.Add(minimum_reorder_quantityLabel);
-            this.Controls.Add(this.minimum_reorder_quantityTextBox);
             this.Controls.Add(reorder_levelLabel);
-            this.Controls.Add(this.reorder_levelTextBox);
             this.Controls.Add(target_levelLabel);
-            this.Controls.Add(this.target_levelTextBox);
             this.Controls.Add(list_priceLabel);
             this.Controls.Add(this.list_priceTextBox);
             this.Controls.Add(standard_costLabel);
@@ -480,7 +483,10 @@
             this.Load += new System.EventHandler(this.FrmDanhMucSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reorder_levelNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimum_reorder_quantityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target_levelNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,36 +496,36 @@
 
         private DatabaseQuanLyBanHangDataSet databaseQuanLyBanHangDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private DatabaseQuanLyBanHangDataSetTableAdapters.productsTableAdapter productsTableAdapter;
-        private DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.productsTableAdapter productsTableAdapter;
+        private QLBH.DatabaseQuanLyBanHangDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox product_codeTextBox;
         private System.Windows.Forms.TextBox product_nameTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox standard_costTextBox;
         private System.Windows.Forms.TextBox list_priceTextBox;
-        private System.Windows.Forms.TextBox target_levelTextBox;
-        private System.Windows.Forms.TextBox reorder_levelTextBox;
-        private System.Windows.Forms.TextBox minimum_reorder_quantityTextBox;
         private System.Windows.Forms.TextBox quantity_per_unitTextBox;
         private System.Windows.Forms.TextBox discontinuedTextBox;
         private System.Windows.Forms.TextBox categoryTextBox;
-        private System.Windows.Forms.DataGridView productsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dgvSanPham;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.NumericUpDown reorder_levelNumericUpDown;
+        private System.Windows.Forms.NumericUpDown minimum_reorder_quantityNumericUpDown;
+        private System.Windows.Forms.NumericUpDown target_levelNumericUpDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn standardcostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listpriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn targetlevelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reorderlevelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minimumreorderquantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityperunitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discontinuedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
     }
 }
