@@ -71,8 +71,18 @@
             this.shipped_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.order_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.grpThongTinChiTietDonHang = new System.Windows.Forms.GroupBox();
+            this.nudGiamGia = new System.Windows.Forms.NumericUpDown();
+            this.nudDonGia = new System.Windows.Forms.NumericUpDown();
+            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.cbbProduct = new System.Windows.Forms.ComboBox();
             this.dgvChiTietDonHang = new System.Windows.Forms.DataGridView();
+            this.orderidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderdetailstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_detailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnThemChiTiet = new System.Windows.Forms.Button();
             this.date_allocatedDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -107,16 +117,6 @@
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.btnInHoaDon = new System.Windows.Forms.Button();
-            this.orderidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderdetailstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.nudDonGia = new System.Windows.Forms.NumericUpDown();
-            this.nudGiamGia = new System.Windows.Forms.NumericUpDown();
             employee_idLabel = new System.Windows.Forms.Label();
             customer_idLabel = new System.Windows.Forms.Label();
             order_dateLabel = new System.Windows.Forms.Label();
@@ -145,13 +145,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).BeginInit();
             this.grpThongTinChiTietDonHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiamGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDonHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_detailsBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGiamGia)).BeginInit();
             this.SuspendLayout();
             // 
             // employee_idLabel
@@ -422,6 +422,7 @@
             this.cbbNV.Name = "cbbNV";
             this.cbbNV.Size = new System.Drawing.Size(121, 21);
             this.cbbNV.TabIndex = 30;
+          
             // 
             // order_statusTextBox
             // 
@@ -552,6 +553,27 @@
             this.grpThongTinChiTietDonHang.TabStop = false;
             this.grpThongTinChiTietDonHang.Text = "Thông tin chi tiết đơn hàng";
             // 
+            // nudGiamGia
+            // 
+            this.nudGiamGia.Location = new System.Drawing.Point(317, 40);
+            this.nudGiamGia.Name = "nudGiamGia";
+            this.nudGiamGia.Size = new System.Drawing.Size(85, 20);
+            this.nudGiamGia.TabIndex = 31;
+            // 
+            // nudDonGia
+            // 
+            this.nudDonGia.Location = new System.Drawing.Point(215, 40);
+            this.nudDonGia.Name = "nudDonGia";
+            this.nudDonGia.Size = new System.Drawing.Size(85, 20);
+            this.nudDonGia.TabIndex = 31;
+            // 
+            // nudSoLuong
+            // 
+            this.nudSoLuong.Location = new System.Drawing.Point(114, 40);
+            this.nudSoLuong.Name = "nudSoLuong";
+            this.nudSoLuong.Size = new System.Drawing.Size(85, 20);
+            this.nudSoLuong.TabIndex = 31;
+            // 
             // cbbProduct
             // 
             this.cbbProduct.FormattingEnabled = true;
@@ -577,6 +599,49 @@
             this.dgvChiTietDonHang.Name = "dgvChiTietDonHang";
             this.dgvChiTietDonHang.Size = new System.Drawing.Size(837, 220);
             this.dgvChiTietDonHang.TabIndex = 13;
+            // 
+            // orderidDataGridViewTextBoxColumn
+            // 
+            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "order_id";
+            this.orderidDataGridViewTextBoxColumn.HeaderText = "order_id";
+            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
+            this.orderidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productidDataGridViewTextBoxColumn
+            // 
+            this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
+            this.productidDataGridViewTextBoxColumn.HeaderText = "product_id";
+            this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // unitpriceDataGridViewTextBoxColumn
+            // 
+            this.unitpriceDataGridViewTextBoxColumn.DataPropertyName = "unit_price";
+            this.unitpriceDataGridViewTextBoxColumn.HeaderText = "unit_price";
+            this.unitpriceDataGridViewTextBoxColumn.Name = "unitpriceDataGridViewTextBoxColumn";
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "discount";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            // 
+            // orderdetailstatusDataGridViewTextBoxColumn
+            // 
+            this.orderdetailstatusDataGridViewTextBoxColumn.DataPropertyName = "order_detail_status";
+            this.orderdetailstatusDataGridViewTextBoxColumn.HeaderText = "order_detail_status";
+            this.orderdetailstatusDataGridViewTextBoxColumn.Name = "orderdetailstatusDataGridViewTextBoxColumn";
+            // 
+            // dateallocatedDataGridViewTextBoxColumn
+            // 
+            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "date_allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
             // 
             // order_detailsBindingSource
             // 
@@ -863,70 +928,7 @@
             this.btnInHoaDon.TabIndex = 2;
             this.btnInHoaDon.Text = "In hoá đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // orderidDataGridViewTextBoxColumn
-            // 
-            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "order_id";
-            this.orderidDataGridViewTextBoxColumn.HeaderText = "order_id";
-            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
-            this.orderidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productidDataGridViewTextBoxColumn
-            // 
-            this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
-            this.productidDataGridViewTextBoxColumn.HeaderText = "product_id";
-            this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // unitpriceDataGridViewTextBoxColumn
-            // 
-            this.unitpriceDataGridViewTextBoxColumn.DataPropertyName = "unit_price";
-            this.unitpriceDataGridViewTextBoxColumn.HeaderText = "unit_price";
-            this.unitpriceDataGridViewTextBoxColumn.Name = "unitpriceDataGridViewTextBoxColumn";
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            this.discountDataGridViewTextBoxColumn.DataPropertyName = "discount";
-            this.discountDataGridViewTextBoxColumn.HeaderText = "discount";
-            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            // 
-            // orderdetailstatusDataGridViewTextBoxColumn
-            // 
-            this.orderdetailstatusDataGridViewTextBoxColumn.DataPropertyName = "order_detail_status";
-            this.orderdetailstatusDataGridViewTextBoxColumn.HeaderText = "order_detail_status";
-            this.orderdetailstatusDataGridViewTextBoxColumn.Name = "orderdetailstatusDataGridViewTextBoxColumn";
-            // 
-            // dateallocatedDataGridViewTextBoxColumn
-            // 
-            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "date_allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
-            // 
-            // nudSoLuong
-            // 
-            this.nudSoLuong.Location = new System.Drawing.Point(114, 40);
-            this.nudSoLuong.Name = "nudSoLuong";
-            this.nudSoLuong.Size = new System.Drawing.Size(85, 20);
-            this.nudSoLuong.TabIndex = 31;
-            // 
-            // nudDonGia
-            // 
-            this.nudDonGia.Location = new System.Drawing.Point(215, 40);
-            this.nudDonGia.Name = "nudDonGia";
-            this.nudDonGia.Size = new System.Drawing.Size(85, 20);
-            this.nudDonGia.TabIndex = 31;
-            // 
-            // nudGiamGia
-            // 
-            this.nudGiamGia.Location = new System.Drawing.Point(317, 40);
-            this.nudGiamGia.Name = "nudGiamGia";
-            this.nudGiamGia.Size = new System.Drawing.Size(85, 20);
-            this.nudGiamGia.TabIndex = 31;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // FrmDatHang
             // 
@@ -954,14 +956,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseQuanLyBanHangDataSet)).EndInit();
             this.grpThongTinChiTietDonHang.ResumeLayout(false);
             this.grpThongTinChiTietDonHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiamGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDonHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_detailsBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGiamGia)).EndInit();
             this.ResumeLayout(false);
 
         }

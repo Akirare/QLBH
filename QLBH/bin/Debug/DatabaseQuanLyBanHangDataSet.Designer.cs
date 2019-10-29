@@ -2992,7 +2992,7 @@ namespace QLBH {
             
             private global::System.Data.DataColumn columnreport_ordered_date_month;
             
-            private global::System.Data.DataColumn columnreport_order_date_year;
+            private global::System.Data.DataColumn columnreport_ordered_date_year;
             
             private global::System.Data.DataColumn columnreport_company_name;
             
@@ -3081,9 +3081,9 @@ namespace QLBH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn report_order_date_yearColumn {
+            public global::System.Data.DataColumn report_ordered_date_yearColumn {
                 get {
-                    return this.columnreport_order_date_year;
+                    return this.columnreport_ordered_date_year;
                 }
             }
             
@@ -3271,7 +3271,7 @@ namespace QLBH {
             public ReportHoaDonBanHangRow AddReportHoaDonBanHangRow(
                         string report_ordered_date_day, 
                         string report_ordered_date_month, 
-                        string report_order_date_year, 
+                        string report_ordered_date_year, 
                         string report_company_name, 
                         string report_company_tax, 
                         string report_company_address, 
@@ -3294,7 +3294,7 @@ namespace QLBH {
                 object[] columnValuesArray = new object[] {
                         report_ordered_date_day,
                         report_ordered_date_month,
-                        report_order_date_year,
+                        report_ordered_date_year,
                         report_company_name,
                         report_company_tax,
                         report_company_address,
@@ -3337,7 +3337,7 @@ namespace QLBH {
             internal void InitVars() {
                 this.columnreport_ordered_date_day = base.Columns["report_ordered_date_day"];
                 this.columnreport_ordered_date_month = base.Columns["report_ordered_date_month"];
-                this.columnreport_order_date_year = base.Columns["report_order_date_year"];
+                this.columnreport_ordered_date_year = base.Columns["report_ordered_date_year"];
                 this.columnreport_company_name = base.Columns["report_company_name"];
                 this.columnreport_company_tax = base.Columns["report_company_tax"];
                 this.columnreport_company_address = base.Columns["report_company_address"];
@@ -3365,8 +3365,8 @@ namespace QLBH {
                 base.Columns.Add(this.columnreport_ordered_date_day);
                 this.columnreport_ordered_date_month = new global::System.Data.DataColumn("report_ordered_date_month", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnreport_ordered_date_month);
-                this.columnreport_order_date_year = new global::System.Data.DataColumn("report_order_date_year", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnreport_order_date_year);
+                this.columnreport_ordered_date_year = new global::System.Data.DataColumn("report_ordered_date_year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreport_ordered_date_year);
                 this.columnreport_company_name = new global::System.Data.DataColumn("report_company_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnreport_company_name);
                 this.columnreport_company_tax = new global::System.Data.DataColumn("report_company_tax", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5384,18 +5384,18 @@ namespace QLBH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string report_order_date_year {
+            public string report_ordered_date_year {
                 get {
                     try {
-                        return ((string)(this[this.tableReportHoaDonBanHang.report_order_date_yearColumn]));
+                        return ((string)(this[this.tableReportHoaDonBanHang.report_ordered_date_yearColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'report_order_date_year\' in table \'ReportHoaDonBanHang\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'report_ordered_date_year\' in table \'ReportHoaDonBanHang\' is" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableReportHoaDonBanHang.report_order_date_yearColumn] = value;
+                    this[this.tableReportHoaDonBanHang.report_ordered_date_yearColumn] = value;
                 }
             }
             
@@ -5730,14 +5730,14 @@ namespace QLBH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isreport_order_date_yearNull() {
-                return this.IsNull(this.tableReportHoaDonBanHang.report_order_date_yearColumn);
+            public bool Isreport_ordered_date_yearNull() {
+                return this.IsNull(this.tableReportHoaDonBanHang.report_ordered_date_yearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setreport_order_date_yearNull() {
-                this[this.tableReportHoaDonBanHang.report_order_date_yearColumn] = global::System.Convert.DBNull;
+            public void Setreport_ordered_date_yearNull() {
+                this[this.tableReportHoaDonBanHang.report_ordered_date_yearColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

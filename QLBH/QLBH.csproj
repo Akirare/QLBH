@@ -129,9 +129,11 @@
     </Compile>
     <Compile Include="Functions\FrmDatHang.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Functions\FrmDatHang.Designer.cs">
       <DependentUpon>FrmDatHang.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Functions\FrmReport.cs">
       <SubType>Form</SubType>
@@ -163,6 +165,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Functions\FrmDatHang.resx">
       <DependentUpon>FrmDatHang.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Functions\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
@@ -177,8 +180,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\ReportDBBH.rdlc" />
     <EmbeddedResource Include="Reports\ReportHoaDonBanHang.rdlc" />
+    <EmbeddedResource Include="Reports\ReportHoaDonBanHang12.rdlc" />
     <None Include="DatabaseQuanLyBanHangDataSet.xsc">
       <DependentUpon>DatabaseQuanLyBanHangDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

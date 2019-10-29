@@ -184,4 +184,6 @@ H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.Functions.FrmDanhMucSanPham.resources
 H:\SourceVisual\QLBH\QLBH\bin\Debug\FrmCauHinh.resx
 H:\SourceVisual\QLBH\QLBH\bin\Debug\FrmCauHinh.cs
 H:\SourceVisual\QLBH\QLBH\bin\Debug\FrmCauHinh.Designer.cs
-H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
+H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.resx
+H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.cs
+H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.Designer.cs

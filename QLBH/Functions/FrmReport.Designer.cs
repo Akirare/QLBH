@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerCommon = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reportViewerCommon
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLBH.Reports.ReportDBBH.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(144, 54);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
-            this.reportViewer1.TabIndex = 0;
+            this.reportViewerCommon.LocalReport.ReportEmbeddedResource = "QLBH.Reports.ReportHoaDonBanHang.rdlc";
+            this.reportViewerCommon.Location = new System.Drawing.Point(2, 0);
+            this.reportViewerCommon.Name = "reportViewerCommon";
+            this.reportViewerCommon.ServerReport.BearerToken = null;
+            this.reportViewerCommon.Size = new System.Drawing.Size(689, 583);
+            this.reportViewerCommon.TabIndex = 0;
             // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(692, 580);
+            this.Controls.Add(this.reportViewerCommon);
             this.Name = "FrmReport";
             this.Text = "FrmReport";
-            this.Load += new System.EventHandler(this.FrmReport_Load);
+         
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewerCommon;
     }
 }

@@ -341,7 +341,7 @@ namespace QLBH.Functions
                         connection.Close();
 
                         // Load lại danh sách cấu hình
-                        LoadDanhMucCauHinhXoa();
+                        //LoadDanhMucCauHinhXoa();
                     }
                     catch (Exception ex)
                     {
@@ -360,5 +360,9 @@ namespace QLBH.Functions
         {
             this.Close();
         }
+
+       
+
+        
     }
 }

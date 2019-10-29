@@ -205,15 +205,9 @@ namespace QLBH.Functions
             this.FormStatus = "View";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void quantityLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void btnLoadOrder_Click(object sender, EventArgs e)
         {
@@ -231,6 +225,9 @@ namespace QLBH.Functions
         private void btnDS_Click(object sender, EventArgs e)
         {
             Load_order();
+
+
+
         }
         SortedDictionary<int, string> listEmployees = new SortedDictionary<int, string>();
         SortedDictionary<int, string> listCustomers = new SortedDictionary<int, string>();
@@ -517,6 +514,44 @@ namespace QLBH.Functions
             }
         }
 
+        /// <summary>
+        /// Hàm dùng để load danh sách cấu hình
+        /// </summary>
+        public void LoadDanhMucCauHinh()
+        {
+            // Tạo câu lệnh để thực thi đến database
+            string queryString = "SELECT * FROM configs";
+
+            // Tạo object từ class SqlConnection (dùng để quản lý kết nối đến Database Server)
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Tạo object từ class SqlCommand (dùng để quản lý việc thực thi câu lệnh)
+                using (SqlCommand command = new SqlCommand(queryString, connection))
+                {
+                    try
+                    {
+                        // Mở kết nối đến Database Server
+                        connection.Open();
+
+                        // Tạo object từ class SqlDataAdapter (dùng để lấy dữ liệu)
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        adapter.SelectCommand = command;
+
+                        // Đổ dữ liệu vào dataset
+                        adapter.Fill(databaseQuanLyBanHangDataSet.configs);
+
+                        // Ngắt kết nối đến Database Server
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Hiển thị thông báo nếu có lỗi
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             // Clear dữ liệu
@@ -646,7 +681,7 @@ namespace QLBH.Functions
                                 connection.Close();
 
                                 // Load lại danh sách cấu hình
-                                //LoadDanhMucCauHinh();
+                                LoadDanhMucCauHinh();
                             }
                             catch (Exception ex)
                             {
@@ -661,6 +696,46 @@ namespace QLBH.Functions
                     // TODO: xử lý lưu
                     break;
             }
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+               // Chuẩn bị dữ liệu
+          databaseQuanLyBanHangDataSet.ReportHoaDonBanHang.Rows.Clear();
+            foreach (DatabaseQuanLyBanHangDataSet.order_detailsRow orderDetailRow in databaseQuanLyBanHangDataSet.order_details.Rows)
+            {
+                var row = databaseQuanLyBanHangDataSet.ReportHoaDonBanHang.NewReportHoaDonBanHangRow();
+
+                // Nạp thông tin Chung về Công ty lấy từ Cấu hình (config)
+                // Sử dụng cú pháp LINQ: collection.Where(p => p...).FirstOrDefault() để lấy dòng dữ liệu thỏa điều kiện
+                row.report_company_name = databaseQuanLyBanHangDataSet.configs.Where(p => p.key == "company.name").FirstOrDefault().value;
+                
+
+                // Nạp thông tin về Khách hàng (customer)
+
+                // Nạp thông tin về Đơn hàng (order)
+                row.report_ordered_date_day = order_dateDateTimePicker.Value.Day.ToString();
+                row.report_ordered_date_month = order_dateDateTimePicker.Value.Month.ToString();
+                row.report_ordered_date_year = order_dateDateTimePicker.Value.Year.ToString();
+
+                // Nạp thông tin về Đơn hàng Chi tiết (order_detail)
+                row.report_order_detail_product_name = orderDetailRow.product_id.ToString();
+
+                // Add dòng dữ liệu vào DataTable
+                databaseQuanLyBanHangDataSet.ReportHoaDonBanHang.AddReportHoaDonBanHangRow(row);
+            }
+
+            // Hiển thị FormReport
+            FrmReport frm = new FrmReport();
+            frm.reportViewerCommon.LocalReport.ReportEmbeddedResource = "QLBH.Reports.ReportHoaDonBanHang.rdlc";
+            frm.ReportDataSourceName = "DataReportOrder";
+            frm.Data = databaseQuanLyBanHangDataSet.ReportHoaDonBanHang;
+            frm.ShowDialog();
+        }
+
+        private void cbbNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDanhSachNhanVien();
         }
     }
 }
