@@ -37,6 +37,7 @@ namespace QLBH
             FrmDatHang frDH = new FrmDatHang();
             frDH.MdiParent = this;
             frDH.Show();
+       
         }
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)

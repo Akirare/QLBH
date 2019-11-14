@@ -124,7 +124,7 @@ namespace QLBH.Functions
         }
 
         // Chức năng button
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             // Kiểm tra dữ liệu nhập
             if (String.IsNullOrEmpty(product_codeTextBox.Text) || String.IsNullOrEmpty(product_nameTextBox.Text)
@@ -139,12 +139,12 @@ namespace QLBH.Functions
             }
 
             // Tạo câu lệnh để thực thi đến database
-            string queryString = @"INSERT INTO products([product_code], [descriptionTextBox], [list_price], 
+            string queryString = @"INSERT INTO products([product_code], [product_name], [description], [list_price], 
                                                         [standard_cost], [target_level], [reorder_level], 
-                                                        [minimum_reorder], [minimum_reorder], [quantity_per_unit],
+                                                        [minimum_reorder_quantity], [quantity_per_unit],
                                                         [discontinued], [category]) 
-                                VALUES(@product_code, @descriptionTextBox, @list_price, @standard_cost, @target_level,
-                                        @reorder_level, @minimum_reorder, @minimum_reorder, @quantity_per_unit, 
+                                VALUES(@product_code, @product_name, @description, @list_price, @standard_cost, @target_level,
+                                        @reorder_level, @minimum_reorder_quantity, @quantity_per_unit, 
                                         @discontinued, @category)";
 
             // Tạo object từ class SqlConnection (dùng để quản lý kết nối đến Database Server)
@@ -161,12 +161,13 @@ namespace QLBH.Functions
                         // Truyền dữ liệu vào đúng tham số
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@product_code", product_codeTextBox.Text);
+                        command.Parameters.AddWithValue("@product_name", product_nameTextBox.Text);
                         command.Parameters.AddWithValue("@description", descriptionTextBox.Text);
                         command.Parameters.AddWithValue("@list_price", list_priceTextBox.Text);
                         command.Parameters.AddWithValue("@standard_cost", standard_costTextBox.Text);
                         command.Parameters.AddWithValue("@target_level", target_levelNumericUpDown.Text);
                         command.Parameters.AddWithValue("@reorder_level", reorder_levelNumericUpDown.Text);
-                        command.Parameters.AddWithValue("@minimum_reorder", minimum_reorder_quantityNumericUpDown.Text);
+                        command.Parameters.AddWithValue("@minimum_reorder_quantity", minimum_reorder_quantityNumericUpDown.Text);
                         command.Parameters.AddWithValue("@quantity_per_unit", quantity_per_unitTextBox.Text);
                         command.Parameters.AddWithValue("@discontinued", discontinuedTextBox.Text);
                         command.Parameters.AddWithValue("@category", categoryTextBox.Text);
@@ -199,12 +200,12 @@ namespace QLBH.Functions
 
                 // Binding vào các textbox tương ứng
                 descriptionTextBox.Text = row.Cells["descriptionDataGridViewTextBoxColumn"].Value.ToString();
-                list_priceTextBox.Text = row.Cells["list_priceDataGridViewTextBoxColumn"].Value.ToString();
-                standard_costTextBox.Text = row.Cells["standard_costDataGridViewTextBoxColumn"].Value.ToString();
-                target_levelNumericUpDown.Text = row.Cells["target_levelDataGridViewNumericUpDownColumn"].Value.ToString();
-                reorder_levelNumericUpDown.Text = row.Cells["reorder_levelDataGridViewNumericUpDownColumn"].Value.ToString();
-                minimum_reorder_quantityNumericUpDown.Text = row.Cells["minimum_reorder_quantityDataGridViewNumericUpDownTextBoxColumn"].Value.ToString();
-                quantity_per_unitTextBox.Text = row.Cells["quantity_per_unitDataGridViewTextBoxColumn"].Value.ToString();
+                list_priceTextBox.Text = row.Cells["listpriceDataGridViewTextBoxColumn"].Value.ToString();
+                standard_costTextBox.Text = row.Cells["standardcostDataGridViewTextBoxColumn"].Value.ToString();
+                target_levelNumericUpDown.Text = row.Cells["targetlevelDataGridViewTextBoxColumn"].Value.ToString();
+                reorder_levelNumericUpDown.Text = row.Cells["reorderlevelDataGridViewTextBoxColumn"].Value.ToString();
+                minimum_reorder_quantityNumericUpDown.Text = row.Cells["minimumreorderquantityDataGridViewTextBoxColumn"].Value.ToString();
+                quantity_per_unitTextBox.Text = row.Cells["quantityperunitDataGridViewTextBoxColumn"].Value.ToString();
                 discontinuedTextBox.Text = row.Cells["discontinuedDataGridViewTextBoxColumn"].Value.ToString();
                 categoryTextBox.Text = row.Cells["categoryDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -229,10 +230,10 @@ namespace QLBH.Functions
 
             // Tạo câu lệnh để thực thi đến database
             string queryString = @"UPDATE products 
-                                   SET [product_code] = @product_code, [descriptionTextBox] = @descriptionTextBox, 
+                                   SET [product_code] = @product_code, [description] = @description, [product_name] = @product_name,
                                         [list_price] = @list_price, [standard_cost] = @standard_cost,
                                         [target_level] = @target_level, [reorder_level] = @reorder_level, 
-                                        [minimum_reorder] = @minimum_reorder, [quantity_per_unit] = @quantity_per_unit, 
+                                        [minimum_reorder_quantity] = @minimum_reorder_quantity, [quantity_per_unit] = @quantity_per_unit, 
                                         [discontinued] = @discontinued, [category] = @category
                                    WHERE id = @id";
 
@@ -250,6 +251,7 @@ namespace QLBH.Functions
                         // Truyền dữ liệu vào đúng tham số
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@product_code", product_codeTextBox.Text);
+                        command.Parameters.AddWithValue("@product_name", product_nameTextBox.Text);
                         command.Parameters.AddWithValue("@description", descriptionTextBox.Text);
                         command.Parameters.AddWithValue("@list_price", list_priceTextBox.Text);
                         command.Parameters.AddWithValue("@standard_cost", standard_costTextBox.Text);
@@ -278,7 +280,17 @@ namespace QLBH.Functions
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+      
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang phát triển");
+        }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             // Hiển thị hộp thoại để xác nhận có chắc chắn muốn xóa hay không?
             DialogResult confirmDelete = MessageBox.Show("Bạn có chắc muốn xóa dữ liệu đang chọn?", "Cảnh báo", MessageBoxButtons.YesNo);
@@ -299,11 +311,12 @@ namespace QLBH.Functions
                     try
                     {
                         // Mở kết nối đến Database Server
-                        connection.Open();
+                        connection.Open();  
 
                         // Truyền dữ liệu vào đúng tham số
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.Text; 
                         command.Parameters.AddWithValue("@product_code", product_codeTextBox.Text);
+                        command.Parameters.AddWithValue("@product_name", product_nameTextBox.Text);
                         command.Parameters.AddWithValue("@description", descriptionTextBox.Text);
                         command.Parameters.AddWithValue("@list_price", list_priceTextBox.Text);
                         command.Parameters.AddWithValue("@standard_cost", standard_costTextBox.Text);
@@ -321,7 +334,7 @@ namespace QLBH.Functions
                         connection.Close();
 
                         // Load lại danh sách cấu hình
-                        LoadDanhMucCauHinhXoa();
+                        LoadDanhMucSanPham();
                     }
                     catch (Exception ex)
                     {
@@ -332,15 +345,11 @@ namespace QLBH.Functions
             }
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnThoat_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đang phát triển");
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Application.Exit();
         }
 
-       
+     
     }
 }

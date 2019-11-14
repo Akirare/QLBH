@@ -19,7 +19,10 @@ namespace QLBH
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult thongbao;
+            thongbao = (MessageBox.Show("Are you sure ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning));
+            if (thongbao == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

@@ -187,3 +187,6 @@ H:\SourceVisual\QLBH\QLBH\bin\Debug\FrmCauHinh.Designer.cs
 H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.resx
 H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.cs
 H:\SourceVisual\QLBH\QLBH\bin\Debug\Functions\FrmDatHang.Designer.cs
+H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.csprojAssemblyReference.cache
+H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.FormNgayThang.resources
+H:\SourceVisual\QLBH\QLBH\obj\Debug\QLBH.Functions.FormTest.resources

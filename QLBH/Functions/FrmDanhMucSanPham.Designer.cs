@@ -55,14 +55,6 @@ namespace QLBH.Functions
             this.discontinuedTextBox = new System.Windows.Forms.TextBox();
             this.categoryTextBox = new System.Windows.Forms.TextBox();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.reorder_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.minimum_reorder_quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.target_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +67,14 @@ namespace QLBH.Functions
             this.quantityperunitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discontinuedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.reorder_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.minimum_reorder_quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.target_levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
             product_codeLabel = new System.Windows.Forms.Label();
             product_nameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -306,72 +306,6 @@ namespace QLBH.Functions
             this.dgvSanPham.TabIndex = 22;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(581, 357);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 23;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(500, 357);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 23;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(419, 357);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 23;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(338, 357);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 23;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(257, 357);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 23;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // reorder_levelNumericUpDown
-            // 
-            this.reorder_levelNumericUpDown.Location = new System.Drawing.Point(271, 60);
-            this.reorder_levelNumericUpDown.Name = "reorder_levelNumericUpDown";
-            this.reorder_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.reorder_levelNumericUpDown.TabIndex = 24;
-            // 
-            // minimum_reorder_quantityNumericUpDown
-            // 
-            this.minimum_reorder_quantityNumericUpDown.Location = new System.Drawing.Point(329, 89);
-            this.minimum_reorder_quantityNumericUpDown.Name = "minimum_reorder_quantityNumericUpDown";
-            this.minimum_reorder_quantityNumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.minimum_reorder_quantityNumericUpDown.TabIndex = 24;
-            // 
-            // target_levelNumericUpDown
-            // 
-            this.target_levelNumericUpDown.Location = new System.Drawing.Point(271, 34);
-            this.target_levelNumericUpDown.Name = "target_levelNumericUpDown";
-            this.target_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.target_levelNumericUpDown.TabIndex = 24;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -445,11 +379,81 @@ namespace QLBH.Functions
             this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(581, 357);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 23;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(500, 357);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 23;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(419, 357);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(338, 357);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 23;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(257, 357);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 23;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            // 
+            // reorder_levelNumericUpDown
+            // 
+            this.reorder_levelNumericUpDown.Location = new System.Drawing.Point(271, 60);
+            this.reorder_levelNumericUpDown.Name = "reorder_levelNumericUpDown";
+            this.reorder_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.reorder_levelNumericUpDown.TabIndex = 24;
+            // 
+            // minimum_reorder_quantityNumericUpDown
+            // 
+            this.minimum_reorder_quantityNumericUpDown.Location = new System.Drawing.Point(329, 89);
+            this.minimum_reorder_quantityNumericUpDown.Name = "minimum_reorder_quantityNumericUpDown";
+            this.minimum_reorder_quantityNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.minimum_reorder_quantityNumericUpDown.TabIndex = 24;
+            // 
+            // target_levelNumericUpDown
+            // 
+            this.target_levelNumericUpDown.Location = new System.Drawing.Point(271, 34);
+            this.target_levelNumericUpDown.Name = "target_levelNumericUpDown";
+            this.target_levelNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.target_levelNumericUpDown.TabIndex = 24;
+            // 
             // FrmDanhMucSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 383);
+            this.ClientSize = new System.Drawing.Size(676, 400);
             this.Controls.Add(this.minimum_reorder_quantityNumericUpDown);
             this.Controls.Add(this.target_levelNumericUpDown);
             this.Controls.Add(this.reorder_levelNumericUpDown);

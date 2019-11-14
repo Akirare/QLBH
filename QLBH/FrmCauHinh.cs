@@ -13,6 +13,7 @@ namespace QLBH
 {
     public partial class FrmCauHinh : Form
     {
+        
         string connectionString = QLBH.Properties.Settings.Default.DatabaseQuanLyBanHangConnectionString;
         public FrmCauHinh()
         {
@@ -78,6 +79,7 @@ namespace QLBH
             // Kiểm tra dữ liệu nhập
             if (String.IsNullOrEmpty(keyTextBox.Text) || String.IsNullOrEmpty(valueTextBox.Text))
             {
+
                 MessageBox.Show("Vui lòng kiểm tra lại dữ liệu nhập");
                 return;
             }
